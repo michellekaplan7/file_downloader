@@ -1,0 +1,19 @@
+.selected-row {
+  background-color: #e0e0e0;
+}
+
+.device-column {
+  width: 200px;
+}
+
+.status {
+  border-radius: 50%;
+  display: inline-block;
+  height: 10px;
+  margin-right: 5px;
+  width: 10px;
+}
+
+.status.available {
+  background-color: #659d2e;
+}

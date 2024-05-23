@@ -1,0 +1,87 @@
+.table-header-info {
+  align-items: center;
+  display: flex;
+}
+
+.selected-info-container {
+  font-size: 18px;
+  width: 130px;
+}
+
+.download-button {
+  align-items: center;
+  background: none;
+  border: none;
+  color: black;
+  cursor: pointer;
+  display: flex;
+  font-size: 18px;
+  margin-left: 10px;
+}
+
+.download-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.download-button svg {
+  margin-right: 5px;
+}
+
+.download-button:hover {
+  color: #488fd6;
+}
+
+#select-all {
+  margin-right: 20px;
+}
+
+/* Hide the default checkbox */
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  display: inline-block;
+  padding: 9px;
+  position: relative;
+}
+
+/* Style for the checked state */
+input[type="checkbox"]:checked {
+  background-color: #488fd6;
+  border-color: #488fd6;
+}
+
+/* Style for the indeterminate state */
+input[type="checkbox"]:indeterminate {
+  background-color: #488fd6;
+  border-color: #488fd6;
+}
+
+/* Checkbox tick for checked state */
+input[type="checkbox"]:checked::after {
+  color: white;
+  content: "\2714"; /* Unicode character for checkmark */
+  font-size: 14px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Checkbox dash for indeterminate state */
+input[type="checkbox"]:indeterminate::before {
+  background-color: white;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+}
