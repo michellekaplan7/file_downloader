@@ -2,10 +2,10 @@ import React, { useEffect, useMemo, useState } from "react";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 
-import { files } from "./data/files";
+import { files } from "../../data/files";
 
-import { FileTable } from "./components/FileTable/FileTable";
-import DownloadAlertTable from "./components/DownloadAlertTable/DownloadAlertTable";
+import { FileTable } from "../FileTable/FileTable";
+import DownloadAlertTable from "../DownloadAlertTable/DownloadAlertTable";
 
 import "./App.css";
 
