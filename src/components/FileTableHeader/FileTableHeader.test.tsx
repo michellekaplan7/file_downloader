@@ -95,6 +95,25 @@ describe("FileTableHeader Component", () => {
     expect(mockOnSelectAll).toHaveBeenCalled();
   });
 
+  test("calls onDownload when download button is clicked", () => {
+    render(
+      <FileTableHeader
+        files={testFiles}
+        isDownloadDisabled={false}
+        onDownload={mockOnDownload}
+        onSelectAll={mockOnSelectAll}
+        selectedFileIds={[]}
+      />
+    );
+
+    const downloadButton = screen.getByText("Download Selected")
+      .parentElement as HTMLElement;
+
+    fireEvent.click(downloadButton);
+
+    expect(mockOnDownload).toHaveBeenCalled();
+  });
+
   test("download button is disabled when isDownloadDisabled is true", () => {
     render(
       <FileTableHeader
@@ -128,5 +147,6 @@ describe("FileTableHeader Component", () => {
   });
 
   // TODO: tooltip is shown when download button is disabled and items are selected
+  // TODO: checkbox indeterminate state
   // TODO: fix console.errors
 });
