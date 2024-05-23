@@ -28,8 +28,8 @@ export const FileTableHeader: React.FC<FileTableHeaderProps> = ({
         <div>
           <div className="table-header-info">
             <input
-              checked={selectedFileIds.length === files.length}
               aria-label="select-all"
+              checked={selectedFileIds.length === files.length}
               onChange={onSelectAll}
               type="checkbox"
             />
@@ -41,12 +41,12 @@ export const FileTableHeader: React.FC<FileTableHeaderProps> = ({
             </div>
 
             <button
+              className="download-button"
               data-tooltip-id={
                 isDownloadDisabled && selectedFileIds.length > 0
                   ? "download-disabled-tooltip"
                   : ""
               }
-              className="download-button"
               disabled={isDownloadDisabled}
               onClick={onDownload}
             >
