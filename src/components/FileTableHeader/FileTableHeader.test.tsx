@@ -15,25 +15,33 @@ describe("FileTableHeader Component", () => {
 
   test("renders without crashing", () => {
     render(
-      <FileTableHeader
-        files={testFiles}
-        isDownloadDisabled={false}
-        onDownload={mockOnDownload}
-        onSelectAll={mockOnSelectAll}
-        selectedFileIds={[]}
-      />
+      <table>
+        <thead>
+          <FileTableHeader
+            files={testFiles}
+            isDownloadDisabled={false}
+            onDownload={mockOnDownload}
+            onSelectAll={mockOnSelectAll}
+            selectedFileIds={[]}
+          />
+        </thead>
+      </table>
     );
   });
 
   test("renders table header info correctly", () => {
     render(
-      <FileTableHeader
-        files={testFiles}
-        isDownloadDisabled={false}
-        onDownload={mockOnDownload}
-        onSelectAll={mockOnSelectAll}
-        selectedFileIds={[]}
-      />
+      <table>
+        <thead>
+          <FileTableHeader
+            files={testFiles}
+            isDownloadDisabled={false}
+            onDownload={mockOnDownload}
+            onSelectAll={mockOnSelectAll}
+            selectedFileIds={[]}
+          />
+        </thead>
+      </table>
     );
 
     expect(screen.getByText("None Selected")).toBeInTheDocument();
@@ -41,13 +49,17 @@ describe("FileTableHeader Component", () => {
 
   test("select-all checkbox is checked when all items are selected", () => {
     render(
-      <FileTableHeader
-        files={testFiles}
-        isDownloadDisabled={false}
-        onDownload={mockOnDownload}
-        onSelectAll={mockOnSelectAll}
-        selectedFileIds={testFiles.map((file) => file.id)}
-      />
+      <table>
+        <thead>
+          <FileTableHeader
+            files={testFiles}
+            isDownloadDisabled={false}
+            onDownload={mockOnDownload}
+            onSelectAll={mockOnSelectAll}
+            selectedFileIds={testFiles.map((file) => file.id)}
+          />
+        </thead>
+      </table>
     );
 
     const selectAllCheckbox = screen.getByRole("checkbox", {
@@ -59,13 +71,17 @@ describe("FileTableHeader Component", () => {
 
   test("select-all checkbox is not checked when no items are selected", () => {
     render(
-      <FileTableHeader
-        files={testFiles}
-        isDownloadDisabled={false}
-        onDownload={mockOnDownload}
-        onSelectAll={mockOnSelectAll}
-        selectedFileIds={[]}
-      />
+      <table>
+        <thead>
+          <FileTableHeader
+            files={testFiles}
+            isDownloadDisabled={false}
+            onDownload={mockOnDownload}
+            onSelectAll={mockOnSelectAll}
+            selectedFileIds={[]}
+          />
+        </thead>
+      </table>
     );
 
     const selectAllCheckbox = screen.getByRole("checkbox", {
@@ -77,13 +93,17 @@ describe("FileTableHeader Component", () => {
 
   test("calls onSelectAll when select-all checkbox is clicked", () => {
     render(
-      <FileTableHeader
-        files={testFiles}
-        isDownloadDisabled={false}
-        onDownload={mockOnDownload}
-        onSelectAll={mockOnSelectAll}
-        selectedFileIds={[]}
-      />
+      <table>
+        <thead>
+          <FileTableHeader
+            files={testFiles}
+            isDownloadDisabled={false}
+            onDownload={mockOnDownload}
+            onSelectAll={mockOnSelectAll}
+            selectedFileIds={[]}
+          />
+        </thead>
+      </table>
     );
 
     const selectAllCheckbox = screen.getByRole("checkbox", {
@@ -97,13 +117,17 @@ describe("FileTableHeader Component", () => {
 
   test("calls onDownload when download button is clicked", () => {
     render(
-      <FileTableHeader
-        files={testFiles}
-        isDownloadDisabled={false}
-        onDownload={mockOnDownload}
-        onSelectAll={mockOnSelectAll}
-        selectedFileIds={[]}
-      />
+      <table>
+        <thead>
+          <FileTableHeader
+            files={testFiles}
+            isDownloadDisabled={false}
+            onDownload={mockOnDownload}
+            onSelectAll={mockOnSelectAll}
+            selectedFileIds={[]}
+          />
+        </thead>
+      </table>
     );
 
     const downloadButton = screen.getByText("Download Selected")
@@ -116,13 +140,17 @@ describe("FileTableHeader Component", () => {
 
   test("download button is disabled when isDownloadDisabled is true", () => {
     render(
-      <FileTableHeader
-        files={testFiles}
-        isDownloadDisabled={true}
-        onDownload={mockOnDownload}
-        onSelectAll={mockOnSelectAll}
-        selectedFileIds={[12]}
-      />
+      <table>
+        <thead>
+          <FileTableHeader
+            files={testFiles}
+            isDownloadDisabled={true}
+            onDownload={mockOnDownload}
+            onSelectAll={mockOnSelectAll}
+            selectedFileIds={[12]}
+          />
+        </thead>
+      </table>
     );
 
     const downloadButton = screen.getByText("Download Selected").parentElement;
@@ -132,13 +160,17 @@ describe("FileTableHeader Component", () => {
 
   test("download button is enabled when isDownloadDisabled is false", () => {
     render(
-      <FileTableHeader
-        files={testFiles}
-        isDownloadDisabled={false}
-        onDownload={mockOnDownload}
-        onSelectAll={mockOnSelectAll}
-        selectedFileIds={[11]}
-      />
+      <table>
+        <thead>
+          <FileTableHeader
+            files={testFiles}
+            isDownloadDisabled={false}
+            onDownload={mockOnDownload}
+            onSelectAll={mockOnSelectAll}
+            selectedFileIds={[11]}
+          />
+        </thead>
+      </table>
     );
 
     const downloadButton = screen.getByText("Download Selected").parentElement;
@@ -148,5 +180,5 @@ describe("FileTableHeader Component", () => {
 
   // TODO: tooltip is shown when download button is disabled and items are selected
   // TODO: checkbox indeterminate state
-  // TODO: fix console.error warnings
+  // TODO: fix console.error warning -> `ReactDOMTestUtils.act`
 });

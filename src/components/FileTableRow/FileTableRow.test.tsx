@@ -17,21 +17,29 @@ describe("FileTableRow Component", () => {
 
   test("renders without crashing", () => {
     render(
-      <FileTableRow
-        file={testFile}
-        isSelected={false}
-        onSelectItem={mockOnSelectItem}
-      />
+      <table>
+        <tbody>
+          <FileTableRow
+            file={testFile}
+            isSelected={false}
+            onSelectItem={mockOnSelectItem}
+          />
+        </tbody>
+      </table>
     );
   });
 
   test("renders file data correctly", () => {
     render(
-      <FileTableRow
-        file={testFile}
-        isSelected={false}
-        onSelectItem={mockOnSelectItem}
-      />
+      <table>
+        <tbody>
+          <FileTableRow
+            file={testFile}
+            isSelected={false}
+            onSelectItem={mockOnSelectItem}
+          />
+        </tbody>
+      </table>
     );
 
     expect(screen.getByText(testFile.name)).toBeInTheDocument();
@@ -42,11 +50,15 @@ describe("FileTableRow Component", () => {
 
   test("checkbox is checked when isSelected is true", () => {
     render(
-      <FileTableRow
-        file={testFile}
-        isSelected={true}
-        onSelectItem={mockOnSelectItem}
-      />
+      <table>
+        <tbody>
+          <FileTableRow
+            file={testFile}
+            isSelected={true}
+            onSelectItem={mockOnSelectItem}
+          />
+        </tbody>
+      </table>
     );
 
     const checkbox = screen.getByRole("checkbox");
@@ -55,11 +67,15 @@ describe("FileTableRow Component", () => {
 
   test("checkbox is not checked when isSelected is false", () => {
     render(
-      <FileTableRow
-        file={testFile}
-        isSelected={false}
-        onSelectItem={mockOnSelectItem}
-      />
+      <table>
+        <tbody>
+          <FileTableRow
+            file={testFile}
+            isSelected={false}
+            onSelectItem={mockOnSelectItem}
+          />
+        </tbody>
+      </table>
     );
 
     const checkbox = screen.getByRole("checkbox");
@@ -68,11 +84,15 @@ describe("FileTableRow Component", () => {
 
   test("calls onSelectItem with file id when CHECKBOX is clicked", () => {
     render(
-      <FileTableRow
-        file={testFile}
-        isSelected={false}
-        onSelectItem={mockOnSelectItem}
-      />
+      <table>
+        <tbody>
+          <FileTableRow
+            file={testFile}
+            isSelected={false}
+            onSelectItem={mockOnSelectItem}
+          />
+        </tbody>
+      </table>
     );
 
     const checkbox = screen.getByRole("checkbox");
@@ -83,11 +103,15 @@ describe("FileTableRow Component", () => {
 
   test("calls onSelectItem with file id when ROW is clicked", () => {
     render(
-      <FileTableRow
-        file={testFile}
-        isSelected={false}
-        onSelectItem={mockOnSelectItem}
-      />
+      <table>
+        <tbody>
+          <FileTableRow
+            file={testFile}
+            isSelected={false}
+            onSelectItem={mockOnSelectItem}
+          />
+        </tbody>
+      </table>
     );
 
     const row = screen.getByRole("row");
@@ -98,11 +122,15 @@ describe("FileTableRow Component", () => {
 
   test("does NOT call onSelectItem from the row when click originates from checkbox", () => {
     render(
-      <FileTableRow
-        file={testFile}
-        isSelected={false}
-        onSelectItem={mockOnSelectItem}
-      />
+      <table>
+        <tbody>
+          <FileTableRow
+            file={testFile}
+            isSelected={false}
+            onSelectItem={mockOnSelectItem}
+          />
+        </tbody>
+      </table>
     );
 
     const checkbox = screen.getByRole("checkbox");
@@ -111,5 +139,5 @@ describe("FileTableRow Component", () => {
     expect(mockOnSelectItem).toHaveBeenCalledTimes(1); // Only called once by the checkbox click
   });
 
-  // TODO: fix console.error warning
+  // TODO: fix console.error warning -> `ReactDOMTestUtils.act`
 });
