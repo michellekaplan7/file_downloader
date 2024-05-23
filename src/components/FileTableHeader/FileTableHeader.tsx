@@ -29,7 +29,7 @@ export const FileTableHeader: React.FC<FileTableHeaderProps> = ({
           <div className="table-header-info">
             <input
               checked={selectedFileIds.length === files.length}
-              id="select-all"
+              aria-label="select-all"
               onChange={onSelectAll}
               type="checkbox"
             />
