@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Tooltip as ReactTooltip } from "react-tooltip";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 
@@ -41,6 +41,11 @@ export const FileTableHeader: React.FC<FileTableHeaderProps> = ({
             </div>
 
             <button
+              data-tooltip-id={
+                isDownloadDisabled && selectedFileIds.length > 0
+                  ? "download-disabled-tooltip"
+                  : ""
+              }
               className="download-button"
               disabled={isDownloadDisabled}
               onClick={onDownload}
@@ -48,6 +53,14 @@ export const FileTableHeader: React.FC<FileTableHeaderProps> = ({
               <FontAwesomeIcon icon={faDownload} />
               <span>Download Selected</span>
             </button>
+            {isDownloadDisabled && selectedFileIds.length > 0 && (
+              <ReactTooltip
+                content="Only files with a status of 'Available' are downloadable. Please unselect 'Scheduled' files."
+                id="download-disabled-tooltip"
+                place="bottom"
+                variant="info"
+              />
+            )}
           </div>
         </div>
       </th>
