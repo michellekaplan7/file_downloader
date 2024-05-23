@@ -148,5 +148,5 @@ describe("FileTableHeader Component", () => {
 
   // TODO: tooltip is shown when download button is disabled and items are selected
   // TODO: checkbox indeterminate state
-  // TODO: fix console.errors
+  // TODO: fix console.error warnings
 });
