@@ -36,10 +36,11 @@ const App: React.FC = () => {
     const tableHtml = <DownloadAlertTable selectedFiles={selectedFiles} />;
 
     MySwal.fire({
-      title: "Downloading",
+      confirmButtonColor: "#488fd6",
       html: tableHtml,
-      width: "600px",
       showCloseButton: true,
+      title: "Downloading",
+      width: "600px",
     });
   };
 
