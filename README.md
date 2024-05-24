@@ -1,4 +1,4 @@
-# File Viewer and Downloader
+# File Selector and Downloader
 
 ## Overview
 
