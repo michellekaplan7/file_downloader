@@ -2,7 +2,7 @@
   "name": "file-downloader",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/michellekaplan7/file_downloader",
+  "homepage": "https://michellekaplan7.github.io/file_downloader",
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.1",
