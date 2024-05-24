@@ -30,4 +30,6 @@ describe("DownloadAlertTable Component", () => {
     expect(screen.getByText("Bowser")).toBeInTheDocument();
     expect(screen.getByText("/path/to/file2.pdf")).toBeInTheDocument();
   });
+
+  // TODO: fix console.error warning -> `ReactDOMTestUtils.act`
 });
