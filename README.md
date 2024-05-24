@@ -4,6 +4,8 @@
 
 This application allows users to view different files in a table format, select them, and download files with an "Available" status. The table includes columns for the file name, device, path, and status. Users can select individual files or use a "select all" checkbox to select all files. The application ensures that only files with an "Available" status can be downloaded, and provides feedback to the user through a download alert.
 
+View live site at: https://file-selector-downloader.netlify.app/
+
 ## Technologies Used
 
 - **React**
